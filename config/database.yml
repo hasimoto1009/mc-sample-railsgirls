@@ -49,5 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: sample_production
-  url: <%= ENV['DATABASE_URL'] %>
+  database: Rails.application.credentials.db.database!
+  host: Rails.application.credentials.db.host!
+  username: Rails.application.credentials.db.username!
+  password: Rails.application.credentials.db.password!
